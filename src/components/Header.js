@@ -11,7 +11,7 @@ function Header({loggedIn, userEmail, onSignOut}) {
       <div className="header__nav">
       {loggedIn ? (
                 <>
-                    <h2 className="header__link">{userEmail}</h2>
+                    <h2 className="header__email">{userEmail}</h2>
                     <Link to="/sign-in" className="header__exit" onClick={onSignOut}>Выйти</Link>
                 </>
             ) : (

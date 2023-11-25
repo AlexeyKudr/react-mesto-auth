@@ -182,6 +182,8 @@ const handleRegister = (email, password) => {
       }
     })
     .catch((err) => {
+      openInfoTooltip();
+      setSuccess(false);
       console.log(err);
     });
 };
@@ -196,8 +198,8 @@ useEffect(() => {
     authUser.checkToken(token)
           .then((res) => {
               if (res) {
-                  setUserEmail(res.email);
                   setLoggedIn(true);
+                  setUserEmail(res.data.email);
               }
           })
           .catch((err) => {
